@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Github, Linkedin, Twitter } from "lucide-react";
+import Image from "next/image";
 
 const members = [
   {
@@ -79,7 +80,9 @@ function TeamCard({
             <Skeleton className="w-full h-full rounded-lg" />
           ) : null}
           {!error && (
-            <img
+            <Image
+            width={40}
+            height={40}
               src={member.img || ""}
               alt={member.name}
               className={`w-full h-full object-cover transition-opacity duration-500 ${
