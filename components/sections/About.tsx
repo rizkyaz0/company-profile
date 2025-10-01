@@ -22,6 +22,8 @@ export default function About() {
         {/* Image */}
         <div className="flex justify-center">
           <Image
+            width={400}
+            height={400}
             src="/logo-black.png"
             alt="About"
             className="rounded-xl bg-muted p-6 shadow-lg dark:bg-white"

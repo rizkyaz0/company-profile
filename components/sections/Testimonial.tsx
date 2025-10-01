@@ -73,6 +73,8 @@ export default function Testimonial() {
                         <Skeleton className="w-24 h-24 rounded-full" />
                       )}
                       <Image
+                        width={100}
+                        height={100}
                         src={t.img}
                         alt={t.name}
                         className={`w-24 h-24 rounded-full object-cover shadow ${
