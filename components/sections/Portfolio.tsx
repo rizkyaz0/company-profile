@@ -13,6 +13,7 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const items = [
   { src: "/portfolio-1.jpg", title: "Creative Dashboard" },
@@ -53,7 +54,7 @@ function PortfolioCard({ item, index }: { item: { src: string; title: string }; 
 
             {/* image */}
             {!error && (
-              <img
+              <Image
                 src={item.src}
                 alt={item.title}
                 className={`w-full h-60 object-cover transition-transform duration-500 group-hover:scale-105 ${loading ? "opacity-0" : "opacity-100"}`}
@@ -88,7 +89,7 @@ function PortfolioCard({ item, index }: { item: { src: string; title: string }; 
               <p className="text-muted-foreground">Image not available</p>
             </div>
           ) : (
-            <img src={item.src} alt={item.title} className="w-full h-auto rounded-md" />
+            <Image src={item.src} alt={item.title} className="w-full h-auto rounded-md" />
           )}
         </div>
 

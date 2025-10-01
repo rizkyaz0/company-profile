@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <section className="container mx-auto max-w-7xl px-6 py-20">
@@ -19,7 +21,7 @@ export default function About() {
       <div className="grid md:grid-cols-2 gap-12 items-center">
         {/* Image */}
         <div className="flex justify-center">
-          <img
+          <Image
             src="/logo-black.png"
             alt="About"
             className="rounded-xl bg-muted p-6 shadow-lg dark:bg-white"

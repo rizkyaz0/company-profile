@@ -5,6 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -71,7 +72,7 @@ export default function Testimonial() {
                       {loading && (
                         <Skeleton className="w-24 h-24 rounded-full" />
                       )}
-                      <img
+                      <Image
                         src={t.img}
                         alt={t.name}
                         className={`w-24 h-24 rounded-full object-cover shadow ${
