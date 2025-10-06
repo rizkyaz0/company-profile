@@ -129,6 +129,15 @@
     scroll-behavior: smooth;
   }
   
+  /* Section spacing */
+  main {
+    @apply space-y-8;
+  }
+  
+  section {
+    @apply relative;
+  }
+  
   /* Custom scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
@@ -178,6 +187,20 @@
   
   .glass-dark {
     @apply bg-gray-900/10 backdrop-blur-md border border-gray-800/20;
+  }
+  
+  /* Modern card utilities */
+  .card-modern {
+    @apply relative bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl rounded-3xl border border-gray-200/20 dark:border-gray-700/20 shadow-2xl overflow-hidden;
+  }
+  
+  .card-modern::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white/50 to-purple-50/50 dark:from-gray-900/50 dark:via-gray-800/50 dark:to-purple-900/50;
+  }
+  
+  .card-modern-content {
+    @apply relative z-10 p-12 md:p-16 lg:p-20;
   }
   
   /* Animation utilities */

@@ -9,7 +9,7 @@ import CTA from "@/components/sections/CTA";
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="space-y-8">
       <Hero />
       <Features />
       <About />

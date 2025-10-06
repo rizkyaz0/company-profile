@@ -22,10 +22,21 @@ export default function About() {
     <section className="relative py-24 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20" />
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-purple-600/10 rounded-full blur-3xl -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-l from-purple-400/10 to-pink-600/10 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-purple-600/10 rounded-full blur-3xl" />
       
       <div className="relative container mx-auto max-w-7xl px-6">
+        {/* Modern Card Container */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="relative bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl rounded-3xl border border-gray-200/20 dark:border-gray-700/20 shadow-2xl overflow-hidden"
+        >
+          {/* Card Background Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white/50 to-purple-50/50 dark:from-gray-900/50 dark:via-gray-800/50 dark:to-purple-900/50" />
+          
+          <div className="relative z-10 p-12 md:p-16 lg:p-20">
         {/* Section Header */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -187,6 +198,8 @@ export default function About() {
               </motion.div>
             );
           })}
+        </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
