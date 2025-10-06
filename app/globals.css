@@ -131,7 +131,7 @@
   
   /* Section spacing */
   main {
-    @apply space-y-8;
+    @apply space-y-1;
   }
   
   section {

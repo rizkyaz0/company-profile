@@ -68,7 +68,7 @@ export default function Brands() {
               </h2>
               
               <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                We're proud to work with industry leaders who trust us to deliver 
+                We&apos;re proud to work with industry leaders who trust us to deliver 
                 exceptional digital experiences.
               </p>
             </motion.div>

@@ -75,7 +75,7 @@ export default function About() {
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 items-center mb-16">
           {/* Image Section */}
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
@@ -124,7 +124,7 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-6"
           >
             <div>
               <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
@@ -138,7 +138,7 @@ export default function About() {
             </div>
 
             {/* Features Grid */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3">
               {features.map((feature, i) => (
                 <motion.div
                   key={i}
@@ -173,7 +173,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid md:grid-cols-3 gap-6"
         >
           {stats.map((stat, i) => {
             const Icon = stat.icon;

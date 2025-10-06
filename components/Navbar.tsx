@@ -16,7 +16,9 @@ import {
   Sheet,
   SheetContent,
   SheetTrigger,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   SheetHeader,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   SheetTitle,
 } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
@@ -30,7 +32,7 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 w-full border-b border-gray-200/20 dark:border-gray-800/20 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-gray-900/80"
+      className="sticky top-0 z-50 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-gray-900/80"
     >
       <div className="container mx-auto max-w-7xl flex justify-between items-center px-6 py-4">
         {/* Logo */}
@@ -55,7 +57,7 @@ export default function Navbar() {
         </Link>
 
         {/* Menu Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           <NavigationMenu>
             <NavigationMenuList className="space-x-2">
               <NavigationMenuItem>
@@ -184,7 +186,7 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-80 p-0">
               <div className="flex flex-col h-full">
-                <div className="p-6 border-b border-gray-200 dark:border-gray-700">
+                <div className="p-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
                       <div className="p-2 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-200/20 dark:border-blue-800/20">
@@ -272,6 +274,6 @@ export default function Navbar() {
           </Sheet>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }

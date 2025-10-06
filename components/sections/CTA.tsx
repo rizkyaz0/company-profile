@@ -13,13 +13,12 @@ export default function CTA() {
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-purple-600/10 rounded-full blur-3xl" />
-      
+
       <div className="relative container mx-auto max-w-7xl px-6">
         {/* Modern Card Container */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="relative bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl rounded-3xl border border-gray-200/20 dark:border-gray-700/20 shadow-2xl overflow-hidden"
           onMouseMove={(e) => {
@@ -29,7 +28,13 @@ export default function CTA() {
           animate={{
             background: `radial-gradient(800px circle at ${pos.x}px ${pos.y}px, rgba(59,130,246,0.15), transparent 70%)`,
           }}
-          transition={{ type: "spring", stiffness: 100, damping: 30 }}
+          /* <- gabungkan transition menjadi satu object di sini */
+          transition={{
+            duration: 0.8,
+            type: "spring",
+            stiffness: 100,
+            damping: 30,
+          }}
         >
           {/* Decorative Elements */}
           <div className="absolute top-0 left-0 w-full h-full">
@@ -84,7 +89,7 @@ export default function CTA() {
                 viewport={{ once: true }}
                 className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12"
               >
-                Join thousands of developers and businesses who trust us to bring their 
+                Join thousands of developers and businesses who trust us to bring their
                 ideas to life with cutting-edge technology and exceptional design.
               </motion.p>
 
@@ -97,19 +102,20 @@ export default function CTA() {
                 className="flex flex-col sm:flex-row justify-center gap-4 mb-12"
               >
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button 
-                    size="lg" 
+                  <Button
+                    size="lg"
                     className="group px-8 py-4 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
                   >
                     Start Your Project
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </motion.div>
+
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button 
-                    size="lg" 
+                  <Button
+                    size="lg"
                     variant="outline"
-                    className="px-8 py-4 text-lg font-semibold border-2 border-gray-300 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/20 transition-all duration-300"
+                    className="px-8 py-4 text-lg font-semibold border border-gray-400 dark:border-gray-500 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/20 transition-all duration-300"
                   >
                     <Zap className="mr-2 w-5 h-5" />
                     Schedule a Call
@@ -126,22 +132,33 @@ export default function CTA() {
                 className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto"
               >
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">24/7</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Support Available</div>
+                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                    24/7
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    Support Available
+                  </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2">100%</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Satisfaction Guaranteed</div>
+                  <div className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2">
+                    100%
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    Satisfaction Guaranteed
+                  </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-600 dark:text-green-400 mb-2">Fast</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">Delivery Time</div>
+                  <div className="text-2xl font-bold text-green-600 dark:text-green-400 mb-2">
+                    Fast
+                  </div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                    Delivery Time
+                  </div>
                 </div>
               </motion.div>
             </motion.div>
           </div>
-        </motion.div>
-        </motion.div>
+        </motion.div> {/* ✅ penutupan motion.div yang hilang */}
       </div>
     </section>
   );

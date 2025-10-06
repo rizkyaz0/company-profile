@@ -36,7 +36,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20 border-t border-gray-200/20 dark:border-gray-700/20">
+    <footer className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-to-r from-blue-400/5 to-purple-600/5 rounded-full blur-3xl" />
@@ -44,7 +44,7 @@ export default function Footer() {
 
       <div className="relative container mx-auto max-w-7xl px-6 py-16">
         {/* Main Footer Content */}
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12 mb-12">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-12">
           {/* Brand Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -97,7 +97,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">Company</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {footerLinks.company.map((link, i) => (
                 <li key={i}>
                   <Link 
@@ -120,7 +120,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">Services</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {footerLinks.services.map((link, i) => (
                 <li key={i}>
                   <Link 
@@ -143,7 +143,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">Resources</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {footerLinks.resources.map((link, i) => (
                 <li key={i}>
                   <Link 
@@ -178,7 +178,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="flex-1 px-4 py-3 rounded-xl border border-gray-400 dark:border-gray-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -192,7 +192,7 @@ export default function Footer() {
         </motion.div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-gray-200/20 dark:border-gray-700/20">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8">
           {/* Copyright */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -210,7 +210,7 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             viewport={{ once: true }}
-            className="flex gap-4"
+            className="flex gap-3"
           >
             {socialLinks.map((social, i) => {
               const Icon = social.icon;
