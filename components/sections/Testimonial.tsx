@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import useEmblaCarousel from "embla-carousel-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent } from "@/components/ui/card";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import Image from "next/image";
 
 const testimonials = [
@@ -13,21 +14,21 @@ const testimonials = [
     role: "Founder @ Pinjro",
     img: "/client.jpg",
     quote:
-      "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lorem ipsum dolor sit amet.",
+      "Working with Saramlam has been an incredible experience. Their attention to detail and modern approach to web development exceeded our expectations.",
   },
   {
     name: "Sarah Connor",
     role: "CEO @ Techverse",
     img: "/client2.jpg",
     quote:
-      "Suspendisse potenti. Nulla facilisi. Aenean egestas, leo at feugiat luctus.",
+      "The team delivered a stunning website that perfectly represents our brand. The performance and user experience are outstanding.",
   },
   {
     name: "John Doe",
     role: "CTO @ NextCorp",
     img: "/client3.jpg",
     quote:
-      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames.",
+      "Professional, reliable, and innovative. Saramlam transformed our digital presence with cutting-edge technology and beautiful design.",
   },
 ];
 
@@ -50,10 +51,60 @@ export default function Testimonial() {
   const scrollNext = () => emblaApi?.scrollNext();
 
   return (
-    <section className="container mx-auto px-6 py-20 text-center">
-      <h2 className="text-3xl font-bold text-foreground">
-        What Our Clients Say About Us
-      </h2>
+    <section className="relative py-24 overflow-hidden rounded-2xl">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-purple-600/10 rounded-full blur-3xl" />
+      
+      <div className="relative container mx-auto max-w-7xl px-6">
+        {/* Modern Card Container */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="relative bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl rounded-3xl border border-gray-200/20 dark:border-gray-700/20 shadow-2xl overflow-hidden"
+        >
+          {/* Card Background Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white/50 to-purple-50/50 dark:from-gray-900/50 dark:via-gray-800/50 dark:to-purple-900/50" />
+          
+          <div className="relative z-10 p-12 md:p-16 lg:p-20">
+            {/* Section Header */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center max-w-3xl mx-auto mb-16"
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-200/20 dark:border-blue-800/20 mb-6"
+              >
+                <Quote className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
+                  Testimonials
+                </span>
+              </motion.div>
+              
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+                <span className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 dark:from-white dark:via-gray-100 dark:to-white bg-clip-text text-transparent">
+                  What our clients
+                </span>
+                <br />
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+                  say about us
+                </span>
+              </h2>
+              
+              <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+                Hear from our satisfied clients who have experienced the difference 
+                of working with our team.
+              </p>
+            </motion.div>
 
       {/* Carousel Wrapper */}
       <div className="relative mt-12">
@@ -112,6 +163,9 @@ export default function Testimonial() {
         >
           <ChevronRight className="w-5 h-5 text-black dark:text-white" />
         </button>
+      </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

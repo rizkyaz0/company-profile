@@ -10,9 +10,8 @@ export default function ProjectsPage() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="container mx-auto px-4 py-12"
+      className="w-screen mx-auto px-4 py-12 rounded-2xl"
     >
-      <h1 className="text-4xl font-bold mb-8 text-center">Our Projects</h1>
       <PortfolioSection detailed />
     </motion.main>
   );
