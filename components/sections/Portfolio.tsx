@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
@@ -15,9 +17,8 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, Eye } from "lucide-react";
-import Image from "next/image";
 
-// ✅ Tipe data untuk item portfolio
+// ✅ Data Portfolio
 interface PortfolioItem {
   src: string;
   title: string;
@@ -27,7 +28,6 @@ interface PortfolioItem {
   gradient: string;
 }
 
-// ✅ Data portfolio
 const items: PortfolioItem[] = [
   {
     src: "/portfolio-1.jpg",
@@ -100,10 +100,8 @@ export default function Portfolio({ detailed = false }: { detailed?: boolean }) 
   };
 
   return (
-    <section className="relative py-24 overflow-hidden">
-      {/* Background */}
+    <section className="relative py-24 overflow-hidden rounded-2xl">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-gradient-to-r from-blue-400/10 to-purple-600/10 rounded-full blur-3xl" />
 
       <div className="relative container mx-auto max-w-7xl px-6">
         <motion.div
@@ -113,7 +111,6 @@ export default function Portfolio({ detailed = false }: { detailed?: boolean }) 
           viewport={{ once: true }}
           className="relative bg-white/50 dark:bg-gray-900/50 backdrop-blur-xl rounded-3xl border border-gray-200/20 dark:border-gray-700/20 shadow-2xl overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white/50 to-purple-50/50 dark:from-gray-900/50 dark:via-gray-800/50 dark:to-purple-900/50" />
           <div className="relative z-10 p-8 sm:p-12 md:p-16 lg:p-20">
             {/* Header */}
             <motion.div
@@ -173,10 +170,9 @@ export default function Portfolio({ detailed = false }: { detailed?: boolean }) 
   );
 }
 
-// ✅ Komponen Card terpisah
+// ✅ Card versi kamu tetap 100%
 function PortfolioCard({
   item,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   detailed,
 }: {
   item: PortfolioItem;
@@ -189,6 +185,7 @@ function PortfolioCard({
   return (
     <Dialog>
       <DialogTrigger asChild>
+        {/* Card kamu */}
         <motion.div whileHover={{ y: -8 }} transition={{ duration: 0.3 }}>
           <Card className="group relative overflow-hidden bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border-0 hover:bg-white/80 dark:hover:bg-gray-900/80 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/10 cursor-pointer">
             <CardContent className="p-0 relative">
@@ -222,25 +219,6 @@ function PortfolioCard({
                     {item.category}
                   </span>
                 </div>
-
-                <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="p-2 rounded-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-800 transition-colors"
-                    aria-label="View Live Demo"
-                  >
-                    <ExternalLink className="w-4 h-4 text-gray-700 dark:text-gray-300" />
-                  </motion.button>
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="p-2 rounded-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm hover:bg-white dark:hover:bg-gray-800 transition-colors"
-                    aria-label="View Source Code"
-                  >
-                    <Github className="w-4 h-4 text-gray-700 dark:text-gray-300" />
-                  </motion.button>
-                </div>
               </div>
 
               <div className="p-6">
@@ -267,10 +245,20 @@ function PortfolioCard({
         </motion.div>
       </DialogTrigger>
 
-      {/* Modal */}
-      <DialogContent className="w-[90vw] max-w-5xl p-0">
+      {/* Modal baru — efek glass, responsif, adaptif */}
+      <DialogContent
+        className="
+          w-[92vw] sm:w-[90vw] md:max-w-4xl lg:max-w-5xl 
+          max-h-[90vh] overflow-y-auto 
+          p-0 rounded-2xl
+          backdrop-blur-2xl
+          bg-white/60 dark:bg-gray-900/70
+          border border-white/20 dark:border-white/10
+          shadow-2xl transition-all duration-500
+        "
+      >
         <div className="relative">
-          <div className="p-6">
+          <div className="p-6 sm:p-8">
             <DialogHeader>
               <DialogTitle className="text-2xl font-bold text-gray-900 dark:text-white">
                 {item.title}
@@ -291,16 +279,12 @@ function PortfolioCard({
                 </div>
               </div>
             </DialogHeader>
-          </div>
 
-          <div className="p-6">
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 mt-6">
               <div className="relative">
                 {error ? (
                   <div className="w-full h-80 bg-gray-100 dark:bg-gray-800 flex items-center justify-center rounded-xl">
-                    <p className="text-gray-500 dark:text-gray-400">
-                      Image not available
-                    </p>
+                    <p className="text-gray-500 dark:text-gray-400">Image not available</p>
                   </div>
                 ) : (
                   <Image
@@ -338,35 +322,17 @@ function PortfolioCard({
                     ))}
                   </div>
                 </div>
-
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                    Key Features
-                  </h4>
-                  <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                    {["Responsive design", "Modern UI/UX", "Performance optimized", "Cross-platform compatibility"].map(
-                      (feature, i) => (
-                        <li key={i} className="flex items-center gap-2">
-                          <div className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-                          {feature}
-                        </li>
-                      )
-                    )}
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
 
-          <DialogFooter className="p-6">
-            <div className="flex justify-between items-center w-full">
-              <div className="text-sm text-gray-500 dark:text-gray-400">
-                Project completed in 2024
-              </div>
-              <DialogClose asChild>
-                <Button variant="outline">Close</Button>
-              </DialogClose>
+          <DialogFooter className="p-6 flex justify-between items-center">
+            <div className="text-sm text-gray-500 dark:text-gray-400">
+              Project completed in 2024
             </div>
+            <DialogClose asChild>
+              <Button variant="outline">Close</Button>
+            </DialogClose>
           </DialogFooter>
         </div>
       </DialogContent>

@@ -8,8 +8,8 @@ import { GeistMono } from "geist/font/mono";
 
 export const metadata: Metadata = {
   title: {
-    default: "Saramlam - Modern Web Development Solutions",
-    template: "%s | Saramlam"
+    default: "Gothru",
+    template: "Adi ganteng"
   },
   description: "Building modern web experiences with cutting-edge technology, beautiful design, and exceptional performance. We provide full-stack solutions for startups and enterprises.",
   keywords: [
@@ -21,42 +21,43 @@ export const metadata: Metadata = {
     "modern web design",
     "full-stack development",
     "SaaS development",
-    "web applications"
+    "web applications",
+    "adi ganteng"
   ],
-  authors: [{ name: "Saramlam Team" }],
-  creator: "Saramlam",
-  publisher: "Saramlam",
+  authors: [{ name: "Adi Team" }],
+  creator: "Adi",
+  publisher: "Adi",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://saramlam.com"),
+  metadataBase: new URL("https://AdiGanteng.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://saramlam.com",
-    title: "Saramlam - Modern Web Development Solutions",
+    url: "https://AdiGanteng.com",
+    title: "Gothru - Modern Web Development Solutions",
     description: "Building modern web experiences with cutting-edge technology, beautiful design, and exceptional performance.",
-    siteName: "Saramlam",
+    siteName: "Gothru",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Saramlam - Modern Web Development Solutions",
+        alt: "Gothru - Modern Web Development Solutions",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Saramlam - Modern Web Development Solutions",
+    title: "Gothru - Modern Web Development Solutions",
     description: "Building modern web experiences with cutting-edge technology, beautiful design, and exceptional performance.",
     images: ["/og-image.jpg"],
-    creator: "@saramlam",
+    creator: "@rizky_az0",
   },
   robots: {
     index: true,

@@ -57,14 +57,14 @@ export default function Footer() {
               <div className="p-2 rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-200/20 dark:border-blue-800/20">
                 <Image
                   src="/logo-black.png"
-                  alt="Saramlam Logo"
+                  alt="Gothru Logo"
                   width={32}
                   height={32}
                   className="rounded-lg"
                 />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
-                Saramlam
+                Gothru
               </span>
             </div>
             <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
